@@ -2,6 +2,8 @@ package no.hvl.dat108.oblig4del1.model;
 
 public class Deltager {
 
+    public Deltager() {}
+
     private String fornavn;
     private String etternavn;
     private String mobil;
@@ -12,6 +14,8 @@ public class Deltager {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.mobil = mobil;
+        this.passord=passord;
+        this.kjonn=kjonn;
     }
 
     public String getFornavn() {
@@ -25,6 +29,12 @@ public class Deltager {
     public String getMobil() {
         return mobil;
     }
+
+    public String getKjonn() {
+        return kjonn;
+    }
+
+
 
 
 

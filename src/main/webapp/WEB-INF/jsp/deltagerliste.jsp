@@ -12,6 +12,11 @@
 </head>
 <body>
 	<h2>Deltagerliste</h2>
+<ul>
+	<c:forEach var="d" items="${deltagere}">
+		<li>${d.kjonn} - ${d.fornavn} - ${d.etternavn} - ${d.mobil}</li>
+	</c:forEach>
+</ul>
 
 </body>
 </html>

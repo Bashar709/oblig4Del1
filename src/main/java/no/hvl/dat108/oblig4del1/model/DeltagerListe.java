@@ -6,7 +6,7 @@ import java.util.List;
 public class DeltagerListe {
     private static List<Deltager>deltagere= new ArrayList<>();
 
-    public static void LeggTil(Deltager d){
+    public static void leggTil(Deltager d){
         deltagere.add(d);
     }
     public static List<Deltager> hentAlle() {

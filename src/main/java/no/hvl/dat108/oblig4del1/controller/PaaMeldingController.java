@@ -17,7 +17,7 @@ public class PaaMeldingController {
 
     @PostMapping("/paamelding")
     public String TaImot(@ModelAttribute("deltager") Deltager deltager){
-        DeltagerListe.LeggTil(deltager);
+        DeltagerListe.leggTil(deltager);
         return "paameldt";
     }
 
