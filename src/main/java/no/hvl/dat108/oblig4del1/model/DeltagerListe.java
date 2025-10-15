@@ -5,9 +5,11 @@ import java.util.List;
 
 public class DeltagerListe {
     private static List<Deltager>deltagere= new ArrayList<>();
+    //sann lista ikkje e null, hadde masse trøbbel ellers
 
     public static void leggTil(Deltager d){
         deltagere.add(d);
+        System.out.println("Detlager lagt til" + d);
     }
     public static List<Deltager> hentAlle() {
         return deltagere;

@@ -10,7 +10,7 @@ public class Deltager {
     private String passord;
     private String kjonn;
 
-    public Deltager(String fornavn, String etternavn, String mobil) {
+    public Deltager(String fornavn, String etternavn, String mobil, String passord, String kjonn) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.mobil = mobil;
@@ -34,9 +34,25 @@ public class Deltager {
         return kjonn;
     }
 
+    public void setKjonn(String kjonn) {
+        this.kjonn = kjonn;
+    }
 
+    public void setPassord(String passord) {
+        this.passord = passord;
+    }
 
+    public void setMobil(String mobil) {
+        this.mobil = mobil;
+    }
 
+    public void setEtternavn(String etternavn) {
+        this.etternavn = etternavn;
+    }
+
+    public void setFornavn(String fornavn) {
+        this.fornavn = fornavn;
+    }
 
     @Override
     public String toString() {

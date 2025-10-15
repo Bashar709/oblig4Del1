@@ -3,6 +3,7 @@ package no.hvl.dat108.oblig4del1.controller;
 import no.hvl.dat108.oblig4del1.model.Deltager;
 import no.hvl.dat108.oblig4del1.model.DeltagerListe;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,16 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PaaMeldingController {
 
     @GetMapping("/paamelding")
-    public String visSkjema(){
+    public String visSkjema(Model model){
+        model.addAttribute("deltager", new Deltager());
         return "paamelding_med_melding";
     }
 
     @PostMapping("/paamelding")
-    public String TaImot(@ModelAttribute("deltager") Deltager deltager){
+    public String taImot(@ModelAttribute("deltager") Deltager deltager){
         DeltagerListe.leggTil(deltager);
-        return "paameldt";
+        return "paameldt"; //
     }
-
-
-
 }

@@ -19,6 +19,7 @@
 		&nbsp;&nbsp;&nbsp;${deltager.kjonn}<br />
 
 	</p>
+
 	<a href="deltagerliste">Gå til deltagerlisten</a>
 	<a href="paamelding">Tilbake til Påmelding</a>
 
