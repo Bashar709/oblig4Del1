@@ -8,6 +8,7 @@ public class Deltager {
     private String etternavn;
     private String mobil;
     private String passord;
+    private String passord1;
     private String kjonn;
 
     public Deltager(String fornavn, String etternavn, String mobil, String passord, String kjonn) {
@@ -29,6 +30,9 @@ public class Deltager {
     public String getMobil() {
         return mobil;
     }
+    public String getPassord(){return passord;}
+    public String getPassord1(){return passord1;}
+
 
     public String getKjonn() {
         return kjonn;
@@ -42,6 +46,11 @@ public class Deltager {
         this.passord = passord;
     }
 
+    public void setPassord1(String passord1) {
+        this.passord1 = passord1;
+    }
+
+
     public void setMobil(String mobil) {
         this.mobil = mobil;
     }
@@ -54,14 +63,4 @@ public class Deltager {
         this.fornavn = fornavn;
     }
 
-    @Override
-    public String toString() {
-        return "Deltager{" +
-                "fornavn='" + fornavn + '\'' +
-                ", etternavn='" + etternavn + '\'' +
-                ", mobil='" + mobil + '\'' +
-                ", passord='" + passord + '\'' +
-                ", kjonn='" + kjonn + '\'' +
-                '}';
-    }
 }

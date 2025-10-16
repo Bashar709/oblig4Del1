@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="simple.css">
+	<link href="css/simple.css" rel="stylesheet"/>
 	<title>Påmeldingsbekreftelse</title>
 </head>
 <body>
