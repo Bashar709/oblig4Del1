@@ -15,42 +15,48 @@
 <body>
 	<h1>Påmelding</h1>
 
+	<c:if test="${not empty feilmelding}">
+	<p style="color: red; font-weight: bold;">${feilmelding}</p>
+	</c:if>
+
+
 	<form action="paamelding" method="post" id="paameldingSkjema">
 
 
 		<fieldset>
 			<label>
-				Fornavn: <input type="text" name="fornavn" id="forNavn"/>
+				Fornavn: <input type="text" name="fornavn" id="forNavn"
 				pattern="[A-ZÆØÅa-zæøå\s\-]{2,20}"
 				title="Kun bokstaver, bindestrek og mellomrom. 2-20 tegn."/>
-				<span style="color: red;">${feilFornavn}</span><br><br>
-			</label><br><br>
+				<span style="color: red;">${feilFornavn}</span><br>
+			</label><br>
 
 			<label>
-				Etternavn: <input type="text" name="etternavn" id="etterNavn"/>
-				pattern="[A-ZÆØÅa-zæøå\s\-]{2,20}"<br><br>
+				Etternavn: <input type="text" name="etternavn" id="etterNavn"
+				pattern="[A-ZÆØÅa-zæøå\s\-]{2,20}"
 				title="Kun bokstaver, bindestrek og mellomrom. 2-20 tegn."/> <br><br>
+				<span style="color: red;">${feilEtternavn}</span><br>
 
-
-				<span style="color: red;">${feilEtternavn}</span><br><br>
-
-			</label><br><br>
+			</label><br>
 
 			<label>
 				Mobil(8 siffer): <input type="text" name="mobil" id="mobilNR"/>
-				<span style="color: red;">${feilMobil}</span><br><br>
+				<span style="color: red;">${feilMobil}</span><br>
 
-			</label><br><br>
+			</label><br>
 
 			<label>
 				Passord: <input type="password" name="passord" id="passord"/>
-				<span style="color: red;">${feilPassord}</span><br><br>
-
-			</label><br><br>
+				<label style="font-size: 0.9em; margin-left: 10px;">
+				<input type="checkbox" onclick="myFunction()"> Vis passord
+			</label>
+				<span id="passordStyrke" style="margin-left: 10px; font-weight: bold;"></span>
+				<span style="color: red;">${feilPassord}</span><br>
+			</label><br>
 
 			<label>
 				Gjenta Passord: <input type="password" name="passord1" id="gjentaPassord"/>
-				<span style="color: red;">${feilPassord1}</span><br><br>
+				<span style="color: red;">${feilPassord1}</span><br>
 
 			</label>
 
@@ -58,9 +64,9 @@
 			<label>
 				<input type="radio" name="kjonn" value="mann" id="mann"> Mann
 				<input type="radio" name="kjonn" value="dame" id="dame"> Dame
-				<span style="color: red;">${feilKjonn}</span><br><br>
+				<span style="color: red;">${feilKjonn}</span><br>
 
-			</label><p>
+			</label><br>
 
 			<input type="submit" value="meld meg på"/><br>
 		</fieldset>

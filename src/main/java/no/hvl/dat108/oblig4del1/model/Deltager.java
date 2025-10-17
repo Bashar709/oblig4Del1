@@ -11,11 +11,12 @@ public class Deltager {
     private String passord1;
     private String kjonn;
 
-    public Deltager(String fornavn, String etternavn, String mobil, String passord, String kjonn) {
+    public Deltager(String fornavn, String etternavn, String mobil, String passord, String passord1, String kjonn) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.mobil = mobil;
         this.passord=passord;
+        this.passord1=passord1;
         this.kjonn=kjonn;
     }
 
