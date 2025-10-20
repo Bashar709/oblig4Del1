@@ -24,14 +24,18 @@ function sjekkPassordStyrke(passord) {
     }
 }
 // Funksjon for å vise/skjule passord
-function myFunction() {
+function passFunksjon() {
     const passordInput = document.getElementById('passord');
+    const passordInput1 = document.getElementById('gjentaPassord');
     const checkbox = document.querySelector('input[type="checkbox"]');
 
     if (checkbox.checked) {
-        passordInput.type = "text";
+       if(passordInput) passordInput.type = "text";
+        if(passordInput1) passordInput1.type = "text";
     } else {
-        passordInput.type = "password";
+        if (passordInput) passordInput.type = "password";
+        if(passordInput1) passordInput1.type = "password";
+
     }
 }
 
