@@ -12,6 +12,7 @@
 	<title>Deltagerliste</title>
 </head>
 <body>
+<p>innlogget som: ${sessionScope.deltager.fornavn} ${sessionScope.deltager.etternavn} (${sessionScope.deltager.mobil})</p>
 <h2>Deltagerliste</h2>
 <table>
 	<thead>
@@ -22,6 +23,27 @@
 	</tr>
 	</thead>
 	<tbody>
+	<tr>
+		<td>♂</td>
+		<td>Lars-Petter Healand</td>
+		<td>12345678</td>
+	</tr>
+
+	<tr>
+		<td>♂</td>
+		<td>Erling Braut Haaland</td>
+		<td>12345678</td>
+	</tr>
+
+	<tr>
+		<td>♂</td>
+		<td>Andreas Ødegård</td>
+		<td>12345678</td>
+	</tr>
+
+
+
+
 	<c:forEach var="d" items="${deltagere}">
 		<tr>
 			<td>
@@ -39,6 +61,8 @@
 	</tbody>
 </table>
 <br>
-<a href="paamelding">Tilbake til Påmelding</a>
+<a href="paamelding" class="button1">Tilbake til Påmelding</a>
+<a href="login"class="button1">Logg ut!</a>
+
 </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<h1>Påmelding</h1>
+<h1>Påmelding til fest</h1>
 
 <c:if test="${not empty feilmelding}">
 	<p style="color: red; font-weight: bold;">${feilmelding}</p>
@@ -34,13 +34,12 @@
 		<label>
 			Etternavn: <input type="text" name="etternavn" id="etterNavn"
 							  pattern="[A-ZÆØÅa-zæøå\s\-]{2,20}"
-							  title="Kun bokstaver, bindestrek og mellomrom. 2-20 tegn."/> <br><br>
+							  title="Kun bokstaver, bindestrek og mellomrom. 2-20 tegn."/>
 			<span style="color: red;">${feilEtternavn}</span><br>
-
 		</label><br>
 
 		<label>
-			Mobil(8 siffer): <input type="text" name="mobil" id="mobilNR"/>
+			Mobil: <input type="text" name="mobil" id="mobilNR"/>
 			<span style="color: red;">${feilMobil}</span><br>
 		</label><br>
 

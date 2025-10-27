@@ -19,10 +19,9 @@
 
     <fieldset>
         <label>
-            Mobil: <input type="text" name="mobil" id="mobil" pattern="\d{8}" titel="Må ha nøyaktig 8 siffer"
-        />
-
+            Mobil: <input type="text" name="mobil" id="mobil" pattern="\d{8}" placeholder="Må ha nøyaktig 8 siffer"/>
         </label><br>
+
         <label>
             Passord:
             <input type="password" name="passord" id="passord" placeholder="ditt passord"/>
@@ -32,8 +31,6 @@
             <span id="passordStyrke" style="margin-left: 10px; font-weight: bold;"></span>
             <span style="color: red;">${feilPassord}</span><br>
         </label>
-
-
         <input type="submit" value="Logg inn"/><br>
     </fieldset>
 </form>

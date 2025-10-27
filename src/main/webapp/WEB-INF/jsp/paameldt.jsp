@@ -20,8 +20,9 @@
 
 	</p>
 
-	<a href="deltagerliste">Gå til deltagerlisten</a>
-	<a href="paamelding">Tilbake til Påmelding</a>
+
+	<a href="deltagerliste" class="button1">Gå til deltagerlisten</a>
+	<a href="paamelding" class="button1">Tilbake til Påmelding</a>
 
 </body>
 </html>

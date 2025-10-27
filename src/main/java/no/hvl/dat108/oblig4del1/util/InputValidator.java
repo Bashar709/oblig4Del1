@@ -4,7 +4,7 @@ import no.hvl.dat108.oblig4del1.model.Deltager;
 import no.hvl.dat108.oblig4del1.model.DeltagerListe;
 import org.springframework.ui.Model;
 
-public class InputValider {
+public class InputValidator {
     public static boolean validerDeltager(Deltager deltager, Model model) {
         boolean harFeil = false;
 
@@ -27,7 +27,7 @@ public class InputValider {
             harFeil = true;
         }
         //sjekke om mobil allerede eksisterer (kun hvis format er gyldig)
-        else if (DeltagerListe.finnDeltagerMedMobil(deltager.getMobil()) != null) {
+        else if (DeltagerListe.finnDeltagersMobil(deltager.getMobil()) != null) {
             model.addAttribute("feilMobil", "Mobilnummeret er allerede registrert");
             harFeil = true;
         }

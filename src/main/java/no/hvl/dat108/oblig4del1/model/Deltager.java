@@ -1,8 +1,10 @@
 package no.hvl.dat108.oblig4del1.model;
 
+
 public class Deltager {
 
-    public Deltager() {}
+    public Deltager(){
+    }
 
     private String fornavn;
     private String etternavn;

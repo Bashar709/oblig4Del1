@@ -2,7 +2,7 @@ package no.hvl.dat108.oblig4del1.controller;
 
 import no.hvl.dat108.oblig4del1.model.Deltager;
 import no.hvl.dat108.oblig4del1.model.DeltagerListe;
-import no.hvl.dat108.oblig4del1.util.InputValider;
+import no.hvl.dat108.oblig4del1.util.InputValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class PaaMeldingController {
     @PostMapping("/paamelding")
     public String taImot(@ModelAttribute("deltager") Deltager deltager, Model model) {
 
-        boolean harFeil = InputValider.validerDeltager(deltager, model);
+        boolean harFeil = InputValidator.validerDeltager(deltager, model);
 
         if (harFeil) {
             return "paamelding_med_melding";
