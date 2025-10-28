@@ -12,7 +12,15 @@
 	<title>Deltagerliste</title>
 </head>
 <body>
-<p>innlogget som: ${sessionScope.deltager.fornavn} ${sessionScope.deltager.etternavn} (${sessionScope.deltager.mobil})</p>
+<c:choose>
+	<c:when test="${not empty sessionScope.deltager}">
+		<p>Innlogget som: ${sessionScope.deltager.fornavn} ${sessionScope.deltager.etternavn} (${sessionScope.deltager.mobil})</p>
+	</c:when>
+	<c:otherwise>
+		<p>Du er ikke logget inn. <a href="login">Logg inn</a> eller <a href="paamelding">Meld deg på</a> for å se hele listen.</p>
+	</c:otherwise>
+</c:choose>
+
 <h2>Deltagerliste</h2>
 <table>
 	<thead>

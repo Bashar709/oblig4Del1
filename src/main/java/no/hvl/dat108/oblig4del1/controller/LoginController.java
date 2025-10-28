@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import no.hvl.dat108.oblig4del1.model.Deltager;
 import no.hvl.dat108.oblig4del1.model.DeltagerListe;
 import no.hvl.dat108.oblig4del1.util.LoginUtil;
+import no.hvl.dat108.oblig4del1.util.PassordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class LoginController {
         return "loginSide";
     }
 
-    /*
+     /*
      * POST /login er forespørselen for å logge inn.
      */
     @PostMapping("/login")
@@ -36,13 +37,16 @@ public class LoginController {
 
         Deltager deltager = DeltagerListe.finnDeltagersMobil(mobil); // finne detlager med mobil
 
-        if(deltager == null){
-            ra.addFlashAttribute("feilmelding", "Uglig mobilnummer");
+      //sjekke både passord og mobilnummer
+        if(deltager == null || PassordUtil.sjekkPassord(passord, deltager.getPassord())){
+            ra.addFlashAttribute("feilmelding", "Ugylig mobilnummer eller passord");
             return "redirect:/login";
         }
 
+
         loginUtil.loggInnBruker(request, mobil);
-        return "redirect:deltagerliste";
+        request.getSession().setAttribute("deltager", deltager);
+        return "redirect:/deltagerliste";
     }
 
 }

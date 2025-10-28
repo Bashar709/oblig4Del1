@@ -15,6 +15,7 @@ public class DeltagerListe {
     public static List<Deltager> hentAlle() {
         return deltagere;
     }
+
     public static Deltager finnDeltagersMobil(String mobil){
         for(Deltager d: deltagere){
             if(d.getMobil().equals(mobil)){

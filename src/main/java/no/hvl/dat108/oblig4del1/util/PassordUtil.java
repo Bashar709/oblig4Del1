@@ -1,5 +1,8 @@
 package no.hvl.dat108.oblig4del1.util;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PassordUtil {
 
     /**

@@ -25,6 +25,11 @@ public class DeltagerListeController {
         }
         String mobil = loginUtil.getInnloggetMobil(session);
         Deltager innloggetDeltager= DeltagerListe.finnDeltagersMobil(mobil);
+        if(innloggetDeltager == null){
+            loginUtil.loggUtBruker(session);
+            return "redirect:/login";
+        }
+        session.setAttribute("deltager", innloggetDeltager);
 
         model.addAttribute("deltagere", DeltagerListe.hentAlle().stream()
                 .sorted(Comparator.comparing(Deltager::getFornavn).thenComparing(Deltager::getEtternavn))
