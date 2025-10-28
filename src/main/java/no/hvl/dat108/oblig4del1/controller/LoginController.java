@@ -37,15 +37,19 @@ public class LoginController {
 
         Deltager deltager = DeltagerListe.finnDeltagersMobil(mobil); // finne detlager med mobil
 
+        String oppgitt = passord == null ? "" : passord.trim();
+        String lagret = deltager != null && deltager.getPassord() != null ? deltager.getPassord().trim() : "";
+
       //sjekke både passord og mobilnummer
-        if(deltager == null || PassordUtil.sjekkPassord(passord, deltager.getPassord())){
-            ra.addFlashAttribute("feilmelding", "Ugylig mobilnummer eller passord");
+        if (deltager == null || !PassordUtil.sjekkPassord(oppgitt, lagret)) {
+            ra.addFlashAttribute("feilmelding", "Ugyldig mobil eller passord");
             return "redirect:/login";
         }
 
 
         loginUtil.loggInnBruker(request, mobil);
         request.getSession().setAttribute("deltager", deltager);
+
         return "redirect:/deltagerliste";
     }
 

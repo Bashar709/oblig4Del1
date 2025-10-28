@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<h1>Påmelding til fest</h1>
+<h1>Påmelding</h1>
 
 <c:if test="${not empty feilmelding}">
 	<p style="color: red; font-weight: bold;">${feilmelding}</p>
