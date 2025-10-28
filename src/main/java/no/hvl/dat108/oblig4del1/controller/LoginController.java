@@ -1,18 +1,18 @@
 package no.hvl.dat108.oblig4del1.controller;
 
-import jakarta.servlet.http.HttpSession;
-import no.hvl.dat108.oblig4del1.util.InputValidator;
+import jakarta.servlet.http.HttpServletRequest;
+import no.hvl.dat108.oblig4del1.model.Deltager;
+import no.hvl.dat108.oblig4del1.model.DeltagerListe;
 import no.hvl.dat108.oblig4del1.util.LoginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
-    @Autowired
-    private InputValidator inputValidator;
 
     @Autowired
     private LoginUtil loginUtil;
@@ -30,15 +30,19 @@ public class LoginController {
      */
     @PostMapping("/login")
     public String provAaLoggeInn(@RequestParam String mobil,
-                              @RequestParam String passord,
-                              HttpSession session){
-        session.setAttribute("mobil", mobil);
-        session.setAttribute("innlogget", true);
+                                 @RequestParam String passord,
+                                 HttpServletRequest request,
+                                 RedirectAttributes ra){
 
+        Deltager deltager = DeltagerListe.finnDeltagersMobil(mobil); // finne detlager med mobil
 
+        if(deltager == null){
+            ra.addFlashAttribute("feilmelding", "Uglig mobilnummer");
+            return "redirect:/login";
+        }
 
+        loginUtil.loggInnBruker(request, mobil);
         return "redirect:deltagerliste";
-
     }
 
 }

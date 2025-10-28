@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeltagerListe {
+
     private static List<Deltager>deltagere= new ArrayList<>();
     //sann lista ikkje e null, hadde masse trøbbel ellers
 

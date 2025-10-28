@@ -1,6 +1,8 @@
 package no.hvl.dat108.oblig4del1.model;
 
 
+import no.hvl.dat108.oblig4del1.util.PassordUtil;
+
 public class Deltager {
 
     public Deltager(){
@@ -17,7 +19,7 @@ public class Deltager {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.mobil = mobil;
-        this.passord=passord;
+        this.passord= PassordUtil.hashPassord(passord);
         this.passord1=passord1;
         this.kjonn=kjonn;
     }

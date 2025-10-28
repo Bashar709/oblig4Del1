@@ -12,15 +12,18 @@ public class LoginUtil {
         }
     }
 
-    public void loggInnBruker(HttpServletRequest request, String Mobil) {
+    public void loggInnBruker(HttpServletRequest request, String mobil) {
 
-        loggUtBruker(request.getSession());
-
+        loggUtBruker(request.getSession(false));
         HttpSession sesjon= request.getSession();
-        sesjon.setAttribute("username", Mobil);
-        sesjon.setMaxInactiveInterval(30); // sek
+        sesjon.setAttribute("mobil", mobil);
+        sesjon.setMaxInactiveInterval(60 * 10); // sek 10 min
     }
     public boolean erBrukerInnlogget(HttpSession session){
-        return session != null && session.getAttribute("username") != null;
+        return session != null && session.getAttribute("mobil") != null;
+    }
+
+    public String getInnloggetMobil(HttpSession session) {
+        return session != null ? (String) session.getAttribute("mobil") : null;
     }
 }
