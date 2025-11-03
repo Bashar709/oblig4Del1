@@ -1,8 +1,11 @@
 package no.hvl.dat108.oblig4del1.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import no.hvl.dat108.oblig4del1.util.PassordUtil;
-
+@Entity
+@Table(schema ="deltager_fest")
 public class Deltager {
 
     public Deltager(){
@@ -10,17 +13,20 @@ public class Deltager {
 
     private String fornavn;
     private String etternavn;
+
+    @Id
     private String mobil;
     private String passord;
     private String passord1;
     private String kjonn;
 
-    public Deltager(String fornavn, String etternavn, String mobil, String passord, String passord1, String kjonn) {
+    private String salt;
+    private String hash;
+
+    public Deltager(String fornavn, String etternavn, String mobil, String kjonn) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.mobil = mobil;
-        this.passord= PassordUtil.hashPassord(passord);
-        this.passord1=passord1;
         this.kjonn=kjonn;
     }
 
@@ -67,5 +73,22 @@ public class Deltager {
     public void setFornavn(String fornavn) {
         this.fornavn = fornavn;
     }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
 
 }

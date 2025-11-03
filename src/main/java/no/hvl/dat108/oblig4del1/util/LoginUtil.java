@@ -2,9 +2,10 @@ package no.hvl.dat108.oblig4del1.util;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+
+@Component
 public class LoginUtil {
     public void loggUtBruker(HttpSession session){
         if(session != null){

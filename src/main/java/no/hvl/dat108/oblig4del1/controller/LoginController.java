@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import no.hvl.dat108.oblig4del1.model.Deltager;
 import no.hvl.dat108.oblig4del1.model.DeltagerListe;
 import no.hvl.dat108.oblig4del1.util.LoginUtil;
-import no.hvl.dat108.oblig4del1.util.PassordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
