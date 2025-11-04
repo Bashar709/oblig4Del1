@@ -5,73 +5,35 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(schema ="deltager_fest")
+@Table(name = "deltager", schema = "public") // Bruk public schema
 public class Deltager {
-
-    public Deltager(){
-    }
-
-    private String fornavn;
-    private String etternavn;
-
     @Id
     private String mobil;
-    private String passord;
-    private String passord1;
-    private String kjonn;
 
     private String salt;
     private String hash;
 
-    public Deltager(String fornavn, String etternavn, String mobil, String kjonn) {
+    private String fornavn;
+    private String etternavn;
+    private String kjonn;
+
+    public Deltager() {}
+
+    public Deltager(String mobil, String hash, String salt, String fornavn, String etternavn, String kjonn) {
+        this.mobil = mobil;
+        this.hash = hash;
+        this.salt = salt;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
-        this.mobil = mobil;
-        this.kjonn=kjonn;
-    }
-
-    public String getFornavn() {
-        return fornavn;
-    }
-
-    public String getEtternavn() {
-        return etternavn;
+        this.kjonn = kjonn;
     }
 
     public String getMobil() {
         return mobil;
     }
-    public String getPassord(){return passord;}
-    public String getPassord1(){return passord1;}
-
-
-    public String getKjonn() {
-        return kjonn;
-    }
-
-    public void setKjonn(String kjonn) {
-        this.kjonn = kjonn;
-    }
-
-    public void setPassord(String passord) {
-        this.passord = passord;
-    }
-
-    public void setPassord1(String passord1) {
-        this.passord1 = passord1;
-    }
-
 
     public void setMobil(String mobil) {
         this.mobil = mobil;
-    }
-
-    public void setEtternavn(String etternavn) {
-        this.etternavn = etternavn;
-    }
-
-    public void setFornavn(String fornavn) {
-        this.fornavn = fornavn;
     }
 
     public String getSalt() {
@@ -90,5 +52,27 @@ public class Deltager {
         this.hash = hash;
     }
 
+    public String getFornavn() {
+        return fornavn;
+    }
 
+    public void setFornavn(String fornavn) {
+        this.fornavn = fornavn;
+    }
+
+    public String getEtternavn() {
+        return etternavn;
+    }
+
+    public void setEtternavn(String etternavn) {
+        this.etternavn = etternavn;
+    }
+
+    public String getKjonn() {
+        return kjonn;
+    }
+
+    public void setKjonn(String kjonn) {
+        this.kjonn = kjonn;
+    }
 }

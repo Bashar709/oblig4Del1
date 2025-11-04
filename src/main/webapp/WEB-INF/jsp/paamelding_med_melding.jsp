@@ -61,8 +61,8 @@
 		<fieldset>
 			<legend>Kjønn: </legend>
 			<label>
-				<input type="radio" name="kjonn" value="mann" id="mann"> Mann
-				<input type="radio" name="kjonn" value="dame" id="dame"> Dame
+				<input type="radio" name="kjonn" value="MANN" id="mann"> MANN
+				<input type="radio" name="kjonn" value="KVINNE" id="dame"> KVINNE
 			</label>
 		</fieldset>
 		<span style="color: red;">${feilKjonn}</span><br>

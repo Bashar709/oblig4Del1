@@ -15,13 +15,9 @@ public class LogoutController {
     @Autowired
     private LoginUtil loginUtil;
 
-    /*
-     * POST /logout er forespørselen for å logge ut.
-     */
     @PostMapping
     public String loggut(HttpSession session, RedirectAttributes ra){
         loginUtil.loggUtBruker(session);
-
         ra.addFlashAttribute("redirectMessage", "Du er nå logget ut");
         return "redirect:login";
     }

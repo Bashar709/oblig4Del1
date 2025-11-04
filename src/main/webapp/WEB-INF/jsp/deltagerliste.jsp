@@ -10,6 +10,13 @@
 	<meta charset="UTF-8">
 	<link href="css/simple.css" rel="stylesheet"/>
 	<title>Deltagerliste</title>
+	<style>
+		.innlogga-bruker {
+			background-color: #d4edda; /* Lys grønn */
+			color: #155724; /* Mørk grønn tekst */
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 <c:choose>
@@ -31,6 +38,8 @@
 	</tr>
 	</thead>
 	<tbody>
+
+	<!-- Fjern de hardkodede radene eller legg til CSS for dem om nødvendig -->
 	<tr>
 		<td>♂</td>
 		<td>Lars-Petter Healand</td>
@@ -49,15 +58,12 @@
 		<td>12345678</td>
 	</tr>
 
-
-
-
 	<c:forEach var="d" items="${deltagere}">
-		<tr>
+		<tr <c:if test="${not empty sessionScope.deltager and sessionScope.deltager.mobil eq d.mobil}">class="innlogga-bruker"</c:if>>
 			<td>
 				<c:choose>
-					<c:when test="${d.kjonn == 'mann'}">♂</c:when>
-					<c:when test="${d.kjonn == 'dame'}">♀</c:when>
+					<c:when test="${d.kjonn == 'MANN'}">♂</c:when>
+					<c:when test="${d.kjonn == 'KVINNE'}">♀</c:when>
 					<c:otherwise>${d.kjonn}</c:otherwise>
 				</c:choose>
 			</td>
@@ -67,12 +73,11 @@
 		</tr>
 	</c:forEach>
 
-
 	</tbody>
 </table>
 <br>
 <a href="paamelding" class="button1">Tilbake til Påmelding</a>
-<a href="login"class="button1">Logg ut!</a>
+<a href="login" class="button1">Logg ut!</a>
 
 </body>
 </html>
