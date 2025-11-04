@@ -43,7 +43,7 @@ public class InputValidator {
         }
 
         // Kjønn
-        if (form.getKjonn() == null || (!form.getKjonn().equals("mann") && !form.getKjonn().equals("kvinne"))) {
+        if (form.getKjonn() == null || (!form.getKjonn().equals("Mann") && !form.getKjonn().equals("Kvinne"))) {
             model.addAttribute("feilKjonn", "Velg kjønn");
             harFeil = true;
         }

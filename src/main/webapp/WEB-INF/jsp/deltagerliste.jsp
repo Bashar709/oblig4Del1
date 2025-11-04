@@ -39,7 +39,7 @@
 	</thead>
 	<tbody>
 
-	<!-- Fjern de hardkodede radene eller legg til CSS for dem om nødvendig -->
+	<!-- hardkoda sann lista ikkje ser tom ut -->
 	<tr>
 		<td>♂</td>
 		<td>Lars-Petter Healand</td>
@@ -62,8 +62,8 @@
 		<tr <c:if test="${not empty sessionScope.deltager and sessionScope.deltager.mobil eq d.mobil}">class="innlogga-bruker"</c:if>>
 			<td>
 				<c:choose>
-					<c:when test="${d.kjonn == 'MANN'}">♂</c:when>
-					<c:when test="${d.kjonn == 'KVINNE'}">♀</c:when>
+					<c:when test="${d.kjonn == 'Mann'}">♂</c:when>
+					<c:when test="${d.kjonn == 'Kvinne'}">♀</c:when>
 					<c:otherwise>${d.kjonn}</c:otherwise>
 				</c:choose>
 			</td>

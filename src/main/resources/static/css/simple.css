@@ -640,7 +640,7 @@ progress:indeterminate::-moz-progress-bar {
   text-align: center;
 }
 .innlogga-bruker {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #32ec5f;
+  color: white;
   font-weight: bold;
 }
