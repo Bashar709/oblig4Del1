@@ -1,6 +1,6 @@
 package no.hvl.dat108.oblig4del1.util;
 
-import no.hvl.dat108.oblig4del1.controller.DeltagerForm;
+import no.hvl.dat108.oblig4del1.model.DeltagerForm;
 import no.hvl.dat108.oblig4del1.repo.DeltagerRepository;
 import org.springframework.ui.Model;
 

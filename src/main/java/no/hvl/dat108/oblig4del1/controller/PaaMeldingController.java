@@ -1,6 +1,7 @@
 package no.hvl.dat108.oblig4del1.controller;
 
 import no.hvl.dat108.oblig4del1.model.Deltager;
+import no.hvl.dat108.oblig4del1.model.DeltagerForm;
 import no.hvl.dat108.oblig4del1.repo.DeltagerRepository;
 import no.hvl.dat108.oblig4del1.service.PassordService;
 import no.hvl.dat108.oblig4del1.util.InputValidator;
@@ -27,7 +28,7 @@ public class PaaMeldingController {
     }
 
     @PostMapping("/paamelding")
-    public String taImot(@ModelAttribute("deltager") no.hvl.dat108.oblig4del1.controller.DeltagerForm form, Model model) {
+    public String taImot(@ModelAttribute("deltager") DeltagerForm form, Model model) {
 
         // Validerer at mobil ikke allerede er brukt, samt alle regler
         boolean harFeil = InputValidator.validerDeltagerForm(form, model, deltagerRepository);

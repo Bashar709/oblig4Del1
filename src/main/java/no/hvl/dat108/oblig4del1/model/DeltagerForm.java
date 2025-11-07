@@ -1,4 +1,4 @@
-package no.hvl.dat108.oblig4del1.controller;
+package no.hvl.dat108.oblig4del1.model;
 
 public class DeltagerForm {
     private String fornavn;
